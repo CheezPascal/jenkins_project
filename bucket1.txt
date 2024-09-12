@@ -1,0 +1,19 @@
+This bucket is designed to hold version 1 of the code 
+
+# This code is a simple one that calculates the length of the passed argument 
+
+comment1 = "Jenkins course was an interesting one..."
+x = len(comment1) 
+print (x, "\n")
+
+comment2 = "I really enjoyed learning about CI/CD.. "
+y = len (comment2)
+print (y, "\n")
+
+z = x + y
+print (z)
+
+print ("The total amount of words in both arguments is: " , z )
+print ("The The comments are: ", "\n" , comment1, "\n", comment2 )
+
+Add text boxes 

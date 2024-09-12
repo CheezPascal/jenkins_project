@@ -1,7 +1,5 @@
 #ignores relevant to this project
 .vscode/
-bucket1.txt
-bucket2.txt
 
 
 # All other ignores 
