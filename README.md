@@ -2,13 +2,21 @@
 Jenkins Knowledge check and understadning, final assessment for the end of jenkins sprint  
 
 Title: Jenkins Project 
-Made by: Chisom Pascal Ezeaniekwe 
+
+Made by: Chisom Ezeaniekwe
+
 Requirements: 
-•	Ubuntu 24.04.1 live server
-•	Jenkins installed on port 8080
-•	Docker installed 
-•	Docker hub account (personal)
-•	Git hub account, git installed, GitHub token created, and web hook configured in Jenkins
+
+Ubuntu 24.04.1 live server
+
+Jenkins installed on port 8080
+
+Docker installed 
+
+Docker hub account (personal)
+
+Git hub account, git installed, GitHub token created, and web hook configured in Jenkins
+
 Git repo: https://github.com/CheezPascal/jenkins_project.git
 
 Introduction: 
