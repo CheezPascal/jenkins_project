@@ -1,3 +1,10 @@
+#ignores relevant to this project
+.vscode/
+bucket1.txt
+bucket2.txt
+
+
+# All other ignores 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
