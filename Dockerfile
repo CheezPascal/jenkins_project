@@ -1,7 +1,5 @@
-FROM node:carbon
-WORKDIR /usr/src/app
-COPY package*.json ./
-RUN npm install
-COPY . .
-EXPOSE 8083
-CMD [ "npm", "start" ]
+# Using official Python runtime as a parent image
+FROM python:3.9-slim
+WORKDIR /app
+COPY . /app
+CMD ["python", "chisom.py"]

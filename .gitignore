@@ -1,6 +1,7 @@
 #ignores relevant to this project
 .vscode/
-
+bucket3.txt
+bucket4.txt
 
 # All other ignores 
 # Byte-compiled / optimized / DLL files
