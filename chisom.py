@@ -1,29 +1,20 @@
 # This code is a simple one that calculates the length of the passed argument, Version 1 of app 
 # Name of this app is --Jenkins-comment (python-app in Jenkinsfile)--------
-# Updated docker info 3
-#This comment was added to initiate the second build 
+# Updated docker info 2
+# This comment was added to initiate the second build 
+# This code is a simple one that calculates the length of the passed argument, Version 1 of app 
 
-# This bucket is designed to hold version 2 of the code 
-# Added additional functions  for a web interface
 
-from flask import Flask, request, jsonify
+comment1 = "Jenkins course was an interesting one..."
+x = len(comment1) 
+print (x, "\n")
 
-app = Flask(__name__)
+comment2 = "I really enjoyed learning about CI/CD.. "
+y = len (comment2)
+print (y, "\n")
 
-@app.route('/analyze', methods=['POST'])
-def analyze():
-    data = request.json
-    comment = data['comment']
-    length = len(comment)
-    words = len(comment.split())
-    sentiment = "Positive" if "enjoy" in comment else "Neutral"  # Simplified sentiment analysis
+z = x + y
+print (z)
 
-    return jsonify({
-        'length': length,
-        'word_count': words,
-        'sentiment': sentiment
-    })
-
-if __name__ == '__main__':
-    # Bind Flask app to host 0.0.0.0 and port 8084
-    app.run(host='0.0.0.0', port=8084)
+print ("The total amount of words in both arguments is: " , z )
+print ("The The comments are: ", "\n" , comment1, "\n", comment2 )

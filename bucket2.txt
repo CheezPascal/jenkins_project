@@ -3,7 +3,7 @@ New code
 
 
 # This bucket is designed to hold version 2 of the code 
-# Added additional functions  for a web interface
+# Added additional functions  for a web interface.
 
 from flask import Flask, request, jsonify
 

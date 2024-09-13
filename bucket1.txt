@@ -1,4 +1,4 @@
-This bucket is designed to hold version 1 of the code 
+# This bucket is designed to hold version 1 of the code 
 
 # This code is a simple one that calculates the length of the passed argument 
 
