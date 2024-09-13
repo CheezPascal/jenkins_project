@@ -1,5 +1,7 @@
 # This code is a simple one that calculates the length of the passed argument, Version 1 of app 
-# Name of this app is --Jenkins-comment (python-app in Jenkinsfile)---
+# Name of this app is --Jenkins-comment (python-app in Jenkinsfile)----
+#This comment was added to initiate the third build 
+
 comment1 = "Jenkins course was an interesting one..."
 x = len(comment1) 
 print (x, "\n")
