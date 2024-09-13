@@ -9,7 +9,7 @@ pipeline {
                 echo 'Building Docker Image for chisom.py...'
                 script {
                     echo 'Building Docker Image for chisom.py, ... inBuild stage........'
-                    app = docker.build("chisompascaldkr/python-app:${env.BUILD_NUMBER}")
+                    app = docker.build("chisompascaldkr/python-app2:${env.BUILD_NUMBER}")
                 }
             }
         }
@@ -43,7 +43,7 @@ pipeline {
                     // Stop and remove any existing container with the same name
                     sh 'docker stop chisom_app || true && sudo docker rm chisom_app || true'
                     // Run the newly built image in a container and map port 8083 on the host to port 8080 (changed 8084) in the container
-                    sh "docker run -d --name chisom_app -p 8083:8084 chisompascaldkr/python-app:${env.BUILD_NUMBER}"
+                    sh "docker run -d --name chisom_app -p 8083:8084 chisompascaldkr/python-app2:${env.BUILD_NUMBER}"
                 }
             }
         }
