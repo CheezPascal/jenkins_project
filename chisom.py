@@ -1,5 +1,5 @@
 # This code is a simple one that calculates the length of the passed argument, Version 1 of app 
-# Name of this app is --Jenkins-comment (python-app in Jenkinsfile)---
+# Name of this app is --Jenkins-comment (python-app in Jenkinsfile)-----
 # Updated docker info 3
 #This comment was added to initiate the second build 
 
@@ -16,13 +16,11 @@ def analyze():
     comment = data['comment']
     length = len(comment)
     words = len(comment.split())
-    avg_len = average_word_length(comment)
     sentiment = "Positive" if "enjoy" in comment else "Neutral"  # Simplified sentiment analysis
 
     return jsonify({
         'length': length,
         'word_count': words,
-        'avg_word_length': avg_len,
         'sentiment': sentiment
     })
 
