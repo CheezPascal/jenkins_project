@@ -6,8 +6,9 @@ pipeline {
     stages {
         stage('Build Docker Image') {
             steps {
+                echo 'Building Docker Image for chisom.py...'
                 script {
-                    echo 'Building Docker Image for chisom.py...'
+                    echo 'Building Docker Image for chisom.py, ... inBuild stage........'
                     app = docker.build("chisompascaldkr/python-app:${env.BUILD_NUMBER}")
                 }
             }
@@ -16,7 +17,8 @@ pipeline {
             steps {
                 script {
                     echo 'Logging in to Docker Hub...'
-                    docker.withRegistry('https://registry.hub.docker.com', "${DOCKERHUB_CREDENTIALS}") {
+                  //  docker.withRegistry('https://registry.hub.docker.com', "${DOCKERHUB_CREDENTIALS}") {
+                      withDockerRegistry(credentialsId: 'docker_hub_login', url: 'https://index.docker.io/v1/') { 
                         echo 'Logged in successfully.'
                     }
                 }
