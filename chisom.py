@@ -3,16 +3,29 @@
 # Updated docker info 3
 #This comment was added to initiate the second build 
 
-comment1 = "Jenkins course was an interesting one..."
-x = len(comment1) 
-print (x, "\n")
+# This bucket is designed to hold version 2 of the code 
+# Added additional functions  for a web interface
 
-comment2 = "I really enjoyed learning about CI/CD.. "
-y = len (comment2)
-print (y, "\n")
+from flask import Flask, request, jsonify
 
-z = x + y
-print (z)
+app = Flask(__name__)
 
-print ("The total amount of words in both arguments is: " , z )
-print ("The The comments are: ", "\n" , comment1, "\n", comment2 )
+@app.route('/analyze', methods=['POST'])
+def analyze():
+    data = request.json
+    comment = data['comment']
+    length = len(comment)
+    words = len(comment.split())
+    avg_len = average_word_length(comment)
+    sentiment = "Positive" if "enjoy" in comment else "Neutral"  # Simplified sentiment analysis
+
+    return jsonify({
+        'length': length,
+        'word_count': words,
+        'avg_word_length': avg_len,
+        'sentiment': sentiment
+    })
+
+if __name__ == '__main__':
+    # Bind Flask app to host 0.0.0.0 and port 8084
+    app.run(host='0.0.0.0', port=8084)
