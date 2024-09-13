@@ -1,5 +1,6 @@
 # This code is a simple one that calculates the length of the passed argument, Version 1 of app 
-# Name of this app is --Jenkins-comment (python-app in Jenkinsfile)----
+# Name of this app is --Jenkins-comment (python-app in Jenkinsfile)--
+# Updated docker info
 #This comment was added to initiate the second build 
 
 comment1 = "Jenkins course was an interesting one..."
