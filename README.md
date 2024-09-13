@@ -24,6 +24,9 @@ The primary objective of this project was to solidify my understanding of CI/CD 
 
 Configuration:
 Installed Ubuntu. 
-Installed various software 
+Installed various software needed for the project 
+Installed Jenkins and exposed on port 8080
+Installed docker 
+There are 2 versions of the python code and Dockerfile needed to run version 1 and version 2 of the application. This application is simple and is used to analyze sentiment of comments. 
 
 ...

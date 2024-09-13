@@ -1,14 +1,14 @@
 pipeline {
     agent any
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('docker_hub_login')
+        DOCKERHUB_CREDENTIALS = credentials('docker_hub_login')  
     }
     stages {
         stage('Build Docker Image') {
             steps {
                 script {
                     echo 'Building Docker Image for chisom.py...'
-                    app = docker.build("chisompascaldkr/jenkins-comment:${env.BUILD_NUMBER}")
+                    app = docker.build("chisompascaldkr/python-app:${env.BUILD_NUMBER}")
                 }
             }
         }
@@ -36,11 +36,11 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    echo 'Running Docker container...'
+                    echo 'Running Docker container on port 8083...'
                     // Stop and remove any existing container with the same name
                     sh 'docker stop chisom_app || true && docker rm chisom_app || true'
-                    // Run the newly built image in a container
-                    sh 'docker run -d --name chisom_app chisompascaldkr/jenkins-comment:${env.BUILD_NUMBER}'
+                    // Run the newly built image in a container and map port 8083 on the host to port 8080 in the container
+                    sh 'docker run -d --name chisom_app -p 8083:8083 chisompascaldkr/python-app:${env.BUILD_NUMBER}'
                 }
             }
         }
