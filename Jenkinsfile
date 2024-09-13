@@ -28,7 +28,8 @@ pipeline {
             steps {
                 script {
                     echo 'Pushing Docker image to Docker Hub...'
-                    docker.withRegistry('https://registry.hub.docker.com', "${DOCKERHUB_CREDENTIALS}") {
+                    //docker.withRegistry('https://registry.hub.docker.com', "${DOCKERHUB_CREDENTIALS}") {
+                    withDockerRegistry(credentialsId: 'docker_hub_login', url: 'https://index.docker.io/v1/') { 
                         app.push("${env.BUILD_NUMBER}")
                         app.push("latest")
                     }
